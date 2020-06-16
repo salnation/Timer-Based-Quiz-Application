@@ -4,4 +4,4 @@ The user arrives at the landing page and is presented with a call-to-action to "
 
 The timer is initialized with a value and immediatly begins countdown.
 
-Your score is calculated by time remaining. Answering quickly and correctly results in a higher score. Answering incorrectly results in a time penalty!!!
+Your score is calculated by time remaining. Answering quickly and correctly results in a higher score. Answering incorrectly results in a time penalty
