@@ -62,10 +62,34 @@ getNewQuestion = () => {
         //go to the end page
         return window.location.assign('/end.html');
     }
-    // The question counter moves upwards as questions are answered
+    // The question counter moves upwards as questions are answered 
     questionCounter++;
+    //The way to acheive the variable questionIndex we use the Math.floor(Math.random) multiplied by the available questions remaining 
     const questionIndex = Math.floor(Math.random() * availableQuesions.length);
     currentQuestion = availableQuesions[questionIndex];
+    // Then retrieve the current question to be answered
     question.innerText = currentQuestion.question;
 
+    // Next we have to add the choices for each question array
+    choices.forEach((choice) => {
+        const number = choice.dataset['number'];
+        choice.innerText = currentQuestion['choice' + number];
+    });
 
+    //Next we will move the user on by fetching the next question
+    availableQuesions.splice(questionIndex, 1);
+    acceptingAnswers = true;
+};
+
+choices.forEach((choice) => {
+    choice.addEventListener('click', (e) => {
+        if (!acceptingAnswers) return;
+
+        acceptingAnswers = false;
+        const selectedChoice = e.target;
+        const selectedAnswer = selectedChoice.dataset['number'];
+        getNewQuestion();
+    });
+});
+
+startGame();
