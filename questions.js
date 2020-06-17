@@ -45,3 +45,27 @@ let questions = [
         answer: 4,
     },
 ];
+
+startGame = () => {
+    // make sure this is all starting from 0
+    //questionCounter is set to 0
+    questionCounter = 0;
+    // User score is set to 0
+    score = 0;
+    //available questions is set to include all the questions minus any question or questions that have already been answered
+    availableQuesions = [...questions];
+    getNewQuestion();
+};
+
+getNewQuestion = () => {
+    if (availableQuesions.length === 0 || questionCounter >= MAX_QUESTIONS) {
+        //go to the end page
+        return window.location.assign('/end.html');
+    }
+    // The question counter moves upwards as questions are answered
+    questionCounter++;
+    const questionIndex = Math.floor(Math.random() * availableQuesions.length);
+    currentQuestion = availableQuesions[questionIndex];
+    question.innerText = currentQuestion.question;
+
+
