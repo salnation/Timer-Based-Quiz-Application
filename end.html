@@ -4,28 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Javascript Quiz - Ending html Page</title>
-    <link rel="stylesheet" href="style.css" />
+    <title>Congrats!</title>
+    <link rel="stylesheet" href="app.css" />
   </head>
-
   <body>
-      <!-- Create our div class of container -->
     <div class="container">
-        <!-- Flexbox utilized to center all of the content and fit different screens -->
       <div id="end" class="flex-center flex-column">
-          <!-- Heading id tag for final score so element can be targeted -->
         <h1 id="finalScore"></h1>
-
-        <!-- Using HTML <form> is used to collect user input. The user input can then be processed-->
         <form>
-            <!-- User input -->
           <input
             type="text"
             name="username"
             id="username"
             placeholder="username"
           />
-          <!-- Submit Button -->
           <button
             type="submit"
             class="btn"
@@ -36,14 +28,9 @@
             Save
           </button>
         </form>
-        <!-- Buttons appear after game ends -->
-        <!-- First button is the play again button -->
-        <a class="btn" href="/game.html">Play Again</a>
-        <!-- Second button is the home button -->
-        <a class="btn" href="/">Go Home</a>
+        <a class="btn" href="game.html">Play Again</a>
       </div>
     </div>
-    <!-- Link to the css file I am about to create -->
     <script src="end.js"></script>
   </body>
 </html>

@@ -2,6 +2,11 @@ const username = document.getElementById('username');
 const saveScoreBtn = document.getElementById('saveScoreBtn');
 const finalScore = document.getElementById('finalScore');
 const mostRecentScore = localStorage.getItem('mostRecentScore');
+
+const highScores = JSON.parse(localStorage.getItem('highScores')) || [];
+
+const MAX_HIGH_SCORES = 5;
+
 finalScore.innerText = mostRecentScore;
 
 username.addEventListener('keyup', () => {
@@ -10,8 +15,7 @@ username.addEventListener('keyup', () => {
 
 saveHighScore = (e) => {
     e.preventDefault();
-};
-    // Aiming to attain the users name and their most recent score
+
     const score = {
         score: mostRecentScore,
         name: username.value,
@@ -20,7 +24,6 @@ saveHighScore = (e) => {
     highScores.sort((a, b) => b.score - a.score);
     highScores.splice(5);
 
-    // Attempting to store high scores to local storage
-    localStorage.setItem('highScores');
-    window.location.assign('/');
+    localStorage.setItem('highScores', JSON.stringify(highScores));
+    window.location.assign('');
 };
